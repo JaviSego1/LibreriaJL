@@ -27,3 +27,13 @@ npm install --save body-parser dotenv express express-session mysql2 pug
 ![alt text](docs/image.png)
 
 
+.env
+``
+MYSQL_ROOT_PASSWORD=javiluis4
+MYSQL_USERNAME=root
+MYSQL_PORT=33307
+MYSQL_HOST=localhost
+MYSQL_DATABASE=libreria
+ADMINER_PORT=8182
+SERVICE_PORT=8000
+``
