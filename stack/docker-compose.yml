@@ -15,4 +15,6 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - ${MYSQL_PORT}:3306
+    volumes:
+      - ./scipts:/docker-entrypoint-db.sql
     
