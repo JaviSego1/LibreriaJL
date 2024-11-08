@@ -1,0 +1,38 @@
+@startuml
+entity "Libro" {
+    +ID_Libro : int
+    Titulo : string
+    Fecha_Publicacion : date
+    Precio : float
+}
+
+entity "Autor" {
+    +ID_Autor : int
+    Nombre : string
+    Pais : string
+}
+
+entity "Cliente" {
+    +ID_Cliente : int
+    Nombre : string
+    Correo : string
+}
+
+entity "Venta" {
+    +ID_Venta : int
+    Fecha_Venta : date
+    Total : float
+}
+
+entity "VentaLibro" {
+    +ID_Venta : int
+    +ID_Libro : int
+}
+
+' Relación entre entidades
+Libro }|--|| "escrito_por" Autor : Escrito_por
+Cliente ||--|{ Venta : Realiza
+Venta }|--|{ VentaLibro : Incluye
+Libro ||--|{ VentaLibro : Vendido
+
+@enduml
