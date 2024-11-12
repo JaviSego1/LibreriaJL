@@ -7,7 +7,7 @@ exports.libros = (req, res) => {
         'SELECT * FROM `libro`',
         (err, response) => {
             if(err) res.send('Error de consulta')
-            else res.render('libros/list', { libros: response})
+            else res.render('list', { libros: response})
         }
     );
 };
