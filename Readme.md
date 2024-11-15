@@ -27,6 +27,7 @@ npm install --save body-parser dotenv express express-session mysql2 pug
 ![alt text](docs/image.png)
 
 
+
 .env
 ``
 MYSQL_ROOT_PASSWORD=javiluis4
