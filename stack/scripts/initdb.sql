@@ -53,6 +53,8 @@ INSERT INTO `autor` (`nombre`, `pais`) VALUES
 ('Jose', 'Mexico'),
 ('Sofia', 'USA');
 
+commit;
+
 INSERT INTO `libro` (`titulo`, `fecha_publicacion`, `precio`) VALUES
 ('Libro 1', '2012-12-08', 35.65),
 ('Libro 2', '2006-01-02', 97.37),
@@ -74,6 +76,73 @@ INSERT INTO `libro` (`titulo`, `fecha_publicacion`, `precio`) VALUES
 ('Libro 18', '2012-10-09', 25.92),
 ('Libro 19', '2002-09-29', 20.67),
 ('Libro 20', '2001-04-19', 66.88);
+
+commit;
+
+INSERT `venta` (`fecha_venta`, `total`) VALUES 
+('2017-02-23', 45.72),
+('2012-03-10', 125.68),
+('2015-12-29', 118.80),
+('2022-01-01', 180.21),
+('2009-08-25', 261.00),
+('2018-06-23', 279.77),
+('2019-09-14', 66.72),
+('2007-06-29', 244.26),
+('2011-06-19', 161.50),
+('2002-03-26', 117.89),
+('1991-01-15', 219.33),
+('2014-07-30', 155.37),
+('2008-11-26', 70.56),
+('2003-07-29', 109.30),
+('1991-05-27', 257.80);
+
+commit;
+
+INSERT INTO `cliente` (`nombre`, `correo`) VALUES
+('Sofia', 'cliente1@correo.com'),
+('Lucía', 'cliente2@correo.com'),
+('José', 'cliente3@correo.com'),
+('María', 'cliente4@correo.com'),
+('John', 'cliente5@correo.com'),
+('José', 'cliente6@correo.com'),
+('Sofia', 'cliente7@correo.com'),
+('María', 'cliente8@correo.com'),
+('Sofia', 'cliente9@correo.com'),
+('Carlos', 'cliente10@correo.com');
+
+commit;
+
+INSERT INTO `venta_libro` (`id_venta`, `id_libro`) VALUES
+(8, 15),
+(13, 6),
+(10, 17),
+(14, 11),
+(3, 5),
+(1, 6),
+(12, 16),
+(8, 7),
+(6, 7),
+(3, 18),
+(12, 18),
+(8, 4),
+(9, 7),
+(7, 5),
+(13, 14),
+(15, 12),
+(2, 20),
+(1, 5),
+(3, 19),
+(11, 19),
+(11, 4),
+(2, 13),
+(1, 18),
+(9, 9),
+(10, 16),
+(4, 18),
+(6, 9);
+
+commit;
+
 
 
 
