@@ -138,7 +138,7 @@ services:
       - ./scripts:/docker-entrypoint-initdb.d
 ```
 <br>
-Además hemos creado un fichero <font color="#f8cc01">.env</font> en el que definimos variables de entorno que pueden utilizarse en los contendores
+Además hemos creado un fichero env en el que definimos variables de entorno que pueden utilizarse en los contendores
 
 
 ```.env
@@ -160,8 +160,8 @@ SERVICE_PORT=8000
 |----------|----------|----------|----------|
 | /    | GET   |    | Muestra información general de la librería   |
 | /libro    | GET   | findAll()   | Muestra todos los libros   |
-| /libro/add/:id    | GET   | save()   | Formulario para añadir libro   |
-| /libro/add/:id    | POST   | save()   | Envía el formulario para añadir libro   |
+| /libro/add/    | GET   | save()   | Formulario para añadir libro   |
+| /libro/add/    | POST   | save()   | Envía el formulario para añadir libro   |
 | /libro/edit/:id    | GET   | update()   | Formulario para editar un libro ya existente   |
 | /libro/edit/:id    | POST   | update()   | Envía el formulario para editar un libro   |
 | /libro/del/:id    | GET   | delete()   | Pregunta si quiere borrar el libro con ese ID   |
