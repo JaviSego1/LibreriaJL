@@ -49,19 +49,65 @@ exports.libroDelForm = (req, res) => {
 }
 
 exports.libroDel = (req, res) => {
-    const {id, titulo, fecha_publicacion, precio} = req.body
-    const paramId = req.params['id']
+    const paramId = parseInt(req.params['id'], 10); // Convierte el ID de la URL a número
 
-    if (isNaN(id) || isNaN(paramId) || id!== paramId){
-        res.send('ERROR BORRANDO')
-    } else {
-        db.query(
-            'DELETE FROM libro WHERE id_libro=?',
-            id,
-            (error, respuesta) => {
-                if (error) res.send('ERROR BORRANDO LIBRO' + req.body)
-                else res.redirect('/libro')
-            }
-        )
+    if (isNaN(paramId)) {
+        return res.status(400).send('ID inválido.');
     }
+
+    db.query(
+        'DELETE FROM libro WHERE id_libro = ?',
+        [paramId], // Usa el ID de los parámetros de la URL
+        (error, respuesta) => {
+            if (error) {
+                console.error('Error eliminando libro:', error);
+                return res.status(500).send('Error eliminando el libro.');
+            }
+            res.redirect('/libro'); // Redirige después de eliminar
+        }
+    );
+};
+
+
+exports.libroEditForm = (req, res) => {
+    const { id } = req.params
+    if (isNaN(id)) res.send('PARÁMETROS INCORRECTOS')
+    else
+        db.query(
+        'SELECT * FROM libro WHERE id_libro=?',
+        id,
+        (error, respuesta) => {
+            if(error) res.send('ERROR AL INTENTAR ACTUALIZAR EL LIBRO')
+            else {
+                if (respuesta.length > 0) {
+                    res.render('libro/edit', {libro: respuesta[0]})
+                } else {
+                    res.send('ERROR AL ACTUALIZAR LIBRO, NO EXISTE')
+                }
+            }
+        })
+}
+
+
+exports.libroEdit = (req, res) => {
+    const { id_libro, titulo, fecha_publicacion, precio} = req.body
+ 
+    const paramId = parseInt(req.params['id'], 10); // Convierte el ID de la URL a número
+
+    if (isNaN(paramId)) {
+        return res.status(400).send('ID inválido.');
+    }
+
+    db.query(
+        'UPDATE libro SET titulo = ?, fecha_publicacion = ?, precio = ?' +
+        'WHERE id_libro = ?',
+        [titulo, fecha_publicacion, precio, id_libro],
+        (error, respuesta) => {
+            if(error) {
+                res.send('ERROR ACTUALIZANDO LIBRO' + error)
+                console.log(error)
+            }
+            else res.redirect('/libro')
+        }
+    )
 }

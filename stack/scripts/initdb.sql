@@ -38,7 +38,7 @@ CREATE TABLE venta_libro (
     id_libro INT,
     PRIMARY KEY (id_venta, id_libro),
     FOREIGN KEY (id_venta) REFERENCES venta(id_venta),
-    FOREIGN KEY (id_libro) REFERENCES libro(id_libro)
+    FOREIGN KEY (id_libro) REFERENCES libro(id_libro) ON DELETE CASCADE
 );
 
 INSERT INTO `autor` (`nombre`, `pais`) VALUES 
