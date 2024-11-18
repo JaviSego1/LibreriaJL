@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const libroRouter = require('./routes/libroRouter');
-
+const clienteRouter = require('./routes/clienteRouter');
+const autorRouter = require('./routes/autorRouter');
 
 require('dotenv').config({ path: './stack/.env' });
 
@@ -18,6 +19,10 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(bodyParser.urlencoded({ extended: true}))
 
 app.use('/libro', libroRouter);
+
+app.use('/cliente', clienteRouter);
+
+app.use('/autor', autorRouter);
 
 app.get('/', (req, res) => {
     res.render('index')

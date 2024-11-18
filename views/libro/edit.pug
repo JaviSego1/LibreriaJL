@@ -2,20 +2,22 @@ extends ../templates/layout
 
 block content 
     .container
-        h3.mb-4 Editar un libro
+        h3.mb-4 Editar libro
         .row.justify-content-center
             .col-md-6
                 form(method="post") 
                     .mb-3
                         label.form-label(for="nombre") Título:
-                        input.form-control(type="text", name="nombre", value=`${libro.titulo}`)
+                        input.form-control(type="text", name="nombre", value=libro.titulo)
                     .mb-3
                         label.form-label(for="fecha_publicacion") Fecha publicación:
-                        input.form-control(type="text", name="fecha_publicacion", value=`${libro.fecha_publicacion}`)
+                        input.form-control(type="text", name="fecha_publicacion", value=libro.fecha_publicacion)
                     .mb-3
-                        label.form-label(for="precio") Fecha publicación:
-                        input.form-control(type="number", name="precio", value=`${libro.precio}`)
-                    input(type="hidden", name="id", value=`${libro.id}`)
-                    button.btn.btn-primary(type="submit") Guardar cambios
+                        label.form-label(for="precio") Precio:
+                        input.form-control(type="number", name="precio", value=libro.precio, step="0.01", min="0", max="1000")
+                    .mb-3
+                        input.form-control(type="hidden", name="id_libro", value=libro.id_libro)
+                    .mb-3
+                        button.btn.btn-primary(type="submit") Guardar cambios
 
             

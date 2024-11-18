@@ -1,16 +1,20 @@
 extends ../templates/layout
 
 block content 
-    h3 Añadir un nuevo libro
-        div 
-            form(action="/libro/add", method="post") 
-                label(for="titulo") Título:
-                input(type="text", name="titulo")              
-                br
-                label(for="fecha_publicacion") Fecha publicación:
-                input(type="text", name="fecha_publicacion")                 
-                br
-                label(for="precio") Precio:
-                input(type="number", name="precio" step="0.01" min="0" max="1000")
-                br                
-                input(type="submit", value="Enviar")
+    .container
+        h3.mb-4 Añadir nuevo libro
+        .row.justify-content-center
+            .col-md-6 
+                form(action="/libro/add", method="post") 
+                    .mb-3
+                        label.form-label(for="titulo") Título:
+                        input.form-control(type="text", name="titulo")              
+                    .mb-3r
+                        label.form-label(for="fecha_publicacion") Fecha publicación:
+                        input.form-control(type="text", name="fecha_publicacion")                 
+                    .mb-3
+                        label.form-label(for="precio") Precio:
+                        input.form-control(type="number", name="precio" step="0.01" min="0" max="1000")
+                    .mb-3                
+                        button.btn.btn-primary(type="submit") Guardar cambios
+

@@ -1,18 +1,26 @@
+extends ./templates/layout
 
-block content 
-
-        div 
-            h3 Listado de libros 
-            table(border = 1)
-                thead 
-                    tr 
-                        th titulo 
-                        th fecha_publicacion 
-                        th precio 
-                tbody
-                    each libro in libros 
-                        tr 
-                            td=libro.titulo 
-                            td=libro.fecha_publicacion 
-                            td=libro.precio 
-                            
+block content
+  .container
+    h1.mb-4 Lista de Libros
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th Id
+          th Título
+          th Fecha de Publicación
+          th Precio
+          th Acciones
+      tbody
+        each libro in libros
+          tr
+            td= libro.id_libro
+            td= libro.titulo
+            td= libro.fecha_publicacion
+            td= libro.precio
+            td
+              a.btn.btn-warning.btn-sm(href=`/libro/edit/${libro.id_libro}`) Editar
+              span.mx-2
+              a.btn.btn-danger.btn-sm(href=`/libro/del/${libro.id_libro}`) Eliminar
+    p.mt-4
+      a.btn.btn-success(href='/libro/add') Agregar nuevo libro

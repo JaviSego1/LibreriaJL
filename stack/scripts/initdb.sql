@@ -100,13 +100,13 @@ commit;
 
 INSERT INTO `cliente` (`nombre`, `correo`) VALUES
 ('Sofia', 'cliente1@correo.com'),
-('Lucía', 'cliente2@correo.com'),
-('José', 'cliente3@correo.com'),
-('María', 'cliente4@correo.com'),
+('Lucia', 'cliente2@correo.com'),
+('Jose', 'cliente3@correo.com'),
+('Maria', 'cliente4@correo.com'),
 ('John', 'cliente5@correo.com'),
-('José', 'cliente6@correo.com'),
+('Jose', 'cliente6@correo.com'),
 ('Sofia', 'cliente7@correo.com'),
-('María', 'cliente8@correo.com'),
+('Maria', 'cliente8@correo.com'),
 ('Sofia', 'cliente9@correo.com'),
 ('Carlos', 'cliente10@correo.com');
 

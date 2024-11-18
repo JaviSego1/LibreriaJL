@@ -1,0 +1,23 @@
+extends ../templates/layout
+
+block content
+  .container
+    h1.mb-4 Lista de Clientes
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th Id
+          th Nombre
+          th Correo
+      tbody
+        each cliente in clientes
+          tr
+            td= cliente.id_cliente
+            td= cliente.nombre
+            td= cliente.correo
+            td
+              a.btn.btn-warning.btn-sm(href=`/cliente/edit/${cliente.id_cliente}`) Editar
+              span.mx-2
+              a.btn.btn-danger.btn-sm(href=`/cliente/del/${cliente.id_cliente}`) Eliminar
+    p.mt-4
+      a.btn.btn-success(href='/cliente/add') Agregar nuevo cliente

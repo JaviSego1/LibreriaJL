@@ -1,0 +1,17 @@
+extends ../templates/layout
+
+block content 
+    .container
+        h3.mb-4 Añadir nuevo autor
+        .row.justify-content-center
+            .col-md-6 
+                form(action="/autor/add", method="post") 
+                    .mb-3
+                        label.form-label(for="nombre") Nombre:
+                        input.form-control(type="text", name="nombre")              
+                    .mb-3r
+                        label.form-label(for="pais") Pais:
+                        input.form-control(type="text", name="pais")                 
+                    .mb-3                
+                        button.btn.btn-primary(type="submit") Guardar cambios
+

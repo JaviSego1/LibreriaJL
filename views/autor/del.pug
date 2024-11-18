@@ -1,0 +1,19 @@
+extends ../templates/layout
+
+block content
+    .container
+        h3.mb-4 Eliminar autor
+        .row.justify-content-center
+            .col-md-6
+                form( method="post")
+                    .mb-3
+                        label.form-label(for="nombre") Nombre:
+                        input.form-control(type="text", name="nombre", value=autor.nombre, disabled)              
+                    .mb-3r
+                        label.form-label(for="pais") Pais:
+                        input.form-control(type="text", name="pais", , value=autor.pais, disabled)  
+                    .mb-3
+                        input.form-control(type="hidden", name="id_autor", value=autor.id_autor)
+                    .mb-3
+                        button.btn.btn-primary(type="submit" class="btn btn-danger") Confirmar eliminación
+                        a.btn.btn-secondary.ms-2(href="/autor" class="btn btn-secondary") Cancelar
