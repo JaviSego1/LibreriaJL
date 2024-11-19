@@ -1,0 +1,33 @@
+extends ../templates/layout
+
+block content
+  .container
+    h1.mb-4 Lista de Ventas
+
+    //- Desplegable dentro de un formulario para filtrar por rango de precios
+    form(method="get" action="/venta" class="mb-4")
+      .form-group
+        label(for="precioMin") Precio mínimo
+        input#precioMin.form-control(type="number" step="0.01" name="precioMin" value="#{filtro.precioMin || ''}" placeholder="Precio mínimo")
+      .form-group
+        label(for="precioMax") Precio máximo
+        input#precioMax.form-control(type="number" step="0.01" name="precioMax" value="#{filtro.precioMax || ''}" placeholder="Precio máximo")
+      
+      //- Botones de Filtrar y Eliminar filtro, separados entre sí
+      .form-group.mt-3.d-flex.justify-content-between
+        button.btn.btn-primary(type="submit") Filtrar
+        a.btn.btn-secondary(href="/venta") Eliminar filtro
+
+    //- Tabla de ventas con separación al contenido
+    table.table.table-striped.table-bordered.mt-4
+      thead
+        tr
+          th Id
+          th Fecha de venta
+          th Total
+      tbody
+        each venta in ventas
+          tr
+            td= venta.id_venta
+            td= new Date(venta.fecha_venta).toLocaleDateString('es-ES')
+            td= venta.total
