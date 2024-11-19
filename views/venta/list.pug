@@ -2,47 +2,17 @@ extends ../templates/layout
 
 block content
   .container
-<<<<<<< HEAD
     h1.mb-4 Lista de Clientes
     table.table.table-striped.table-bordered
       thead
         tr
           th Id
           th Fecha de la venta
-=======
-    h1.mb-4 Lista de Ventas
-
-    //- Desplegable dentro de un formulario para filtrar por rango de precios
-    form(method="get" action="/venta" class="mb-4")
-      .form-group
-        label(for="precioMin") Precio mínimo
-        input#precioMin.form-control(type="number" step="0.01" name="precioMin" value="#{filtro.precioMin || ''}" placeholder="Precio mínimo")
-      .form-group
-        label(for="precioMax") Precio máximo
-        input#precioMax.form-control(type="number" step="0.01" name="precioMax" value="#{filtro.precioMax || ''}" placeholder="Precio máximo")
-      
-      //- Botones de Filtrar y Eliminar filtro, separados entre sí
-      .form-group.mt-3.d-flex.justify-content-between
-        button.btn.btn-primary(type="submit") Filtrar
-        a.btn.btn-secondary(href="/venta") Eliminar filtro
-
-    //- Tabla de ventas con separación al contenido
-    table.table.table-striped.table-bordered.mt-4
-      thead
-        tr
-          th Id
-          th Fecha de venta
->>>>>>> 7595f49e39c3da15b58917e59d70fbbf67e871fc
           th Total
       tbody
         each venta in ventas
           tr
             td= venta.id_venta
-<<<<<<< HEAD
             td= venta.fecha_venta
             td= venta.total
             
-=======
-            td= new Date(venta.fecha_venta).toLocaleDateString('es-ES')
-            td= venta.total
->>>>>>> 7595f49e39c3da15b58917e59d70fbbf67e871fc
