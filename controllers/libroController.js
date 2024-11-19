@@ -5,14 +5,25 @@ const formatFechaMySQL = (fecha) => {
     return new Date(fecha).toISOString().split('T')[0];
 };
 
-// Lista todos los libros
+// Lista todos los libros o filtra por rango de precio
 exports.libros = (req, res) => {
-    db.query('SELECT * FROM libro', (err, response) => {
+    const { rango } = req.query;
+
+    let query = 'SELECT * FROM libro';
+    const params = [];
+
+    // Si se proporciona un rango, filtramos los libros
+    if (rango) {
+        const [min, max] = rango.split('-').map(Number);
+        query += ' WHERE precio BETWEEN ? AND ?';
+        params.push(min, max);
+    }
+
+    db.query(query, params, (err, response) => {
         if (err) {
             res.send('Error de consulta');
         } else {
-            // Las fechas ya deberían estar en formato yyyy-MM-dd desde la base de datos.
-            res.render('list', { libros: response });
+            res.render('list', { libros: response, filtro: rango || '' });
         }
     });
 };

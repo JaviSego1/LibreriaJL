@@ -7,6 +7,7 @@ const path = require('path');
 const libroRouter = require('./routes/libroRouter');
 const clienteRouter = require('./routes/clienteRouter');
 const autorRouter = require('./routes/autorRouter');
+const ventaRouter = require('./routes/ventaRouter');
 
 require('dotenv').config({ path: './stack/.env' });
 
@@ -23,6 +24,8 @@ app.use('/libro', libroRouter);
 app.use('/cliente', clienteRouter);
 
 app.use('/autor', autorRouter);
+
+app.use('/venta', ventaRouter);
 
 app.get('/', (req, res) => {
     res.render('index')

@@ -3,6 +3,20 @@ extends ./templates/layout
 block content
   .container
     h1.mb-4 Lista de Libros
+
+    // Formulario para seleccionar el rango de precio
+    form(method="get", action="/libro")
+      .mb-4
+        label(for="rango") Filtrar por rango de precio:
+        select#rango(name="rango", class="form-select", onchange="this.form.submit()")
+          option(value="") Todos los precios
+          option(value="0-10" selected=(filtro === '0-10')) $0 - $10
+          option(value="10-20" selected=(filtro === '10-20')) $10 - $20
+          option(value="20-30" selected=(filtro === '20-30')) $20 - $30
+          option(value="30-40" selected=(filtro === '30-40')) $30 - $40
+          option(value="40-50" selected=(filtro === '40-50')) $40 - $50
+          option(value="50-1000" selected=(filtro === '50-1000')) Más de $50
+
     table.table.table-striped.table-bordered
       thead
         tr

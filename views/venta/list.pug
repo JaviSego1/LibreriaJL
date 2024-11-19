@@ -1,0 +1,18 @@
+extends ../templates/layout
+
+block content
+  .container
+    h1.mb-4 Lista de Clientes
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th Id
+          th Fecha de la venta
+          th Total
+      tbody
+        each venta in ventas
+          tr
+            td= venta.id_venta
+            td= venta.fecha_venta
+            td= venta.total
+            
