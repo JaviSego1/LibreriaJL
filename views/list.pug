@@ -16,7 +16,8 @@ block content
           tr
             td= libro.id_libro
             td= libro.titulo
-            td= libro.fecha_publicacion
+            // Formatear la fecha en formato dd/mm/yyyy directamente en Pug
+            td= new Date(libro.fecha_publicacion).toLocaleDateString('es-ES')
             td= libro.precio
             td
               a.btn.btn-warning.btn-sm(href=`/libro/edit/${libro.id_libro}`) Editar

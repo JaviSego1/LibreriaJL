@@ -5,18 +5,16 @@ block content
         h3.mb-4 Eliminar libro
         .row.justify-content-center
             .col-md-6
-                form( method="post")
+                form(method="post")
                     .mb-3
-                        label.form-label(for="titulo") Título:
+                        label(for="titulo") Título:
                         input.form-control(type="text", name="titulo", value=libro.titulo, disabled)
                     .mb-3
-                        label.form-label(for="fecha_publicacion") Fecha de publicación:
-                        input.form-control(type="text", name="fecha_publicacion", value=libro.fecha_publicacion, disabled)
+                        label(for="fecha_publicacion") Fecha de publicación:
+                        input.form-control(type="date", name="fecha_publicacion", value=libro.fecha_publicacion, disabled)
                     .mb-3
-                        label.form-label(for="precio") Precio:
+                        label(for="precio") Precio:
                         input.form-control(type="number", name="precio", value=libro.precio, disabled, step="0.01", min="0", max="1000")
                     .mb-3
-                        input.form-control(type="hidden", name="id_libro", value=libro.id_libro)
-                    .mb-3
-                        button.btn.btn-primary(type="submit" class="btn btn-danger") Confirmar eliminación
-                        a.btn.btn-secondary.ms-2(href="/libro" class="btn btn-secondary") Cancelar
+                        button.btn.btn-danger(type="submit") Confirmar eliminación
+                        a.btn.btn-secondary.ms-2(href="/libro") Cancelar
