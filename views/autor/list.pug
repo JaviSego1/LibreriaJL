@@ -3,6 +3,19 @@ extends ../templates/layout
 block content
   .container
     h1.mb-4 Lista de Autores
+
+    //- Desplegable dentro de un formulario para filtrar
+    form(method="get" action="/autor" class="mb-4")
+      .form-group
+        label(for="pais-select") Filtrar por país
+        select#pais-select.form-control(name="pais" onchange="this.form.submit()")
+          option(value="") Selecciona un país
+          - let paises = {}
+          each autor in autores
+            if !paises[autor.pais]
+              option(value=autor.pais selected=(filtro === autor.pais))= autor.pais
+              - paises[autor.pais] = true
+
     table.table.table-striped.table-bordered
       thead
         tr

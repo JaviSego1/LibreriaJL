@@ -1,14 +1,30 @@
 const db = require('../db')
 
+// Incluye el maestro detalle
 exports.autores = (req, res) => {
-    db.query(
-        'SELECT * FROM `autor`',
-        (err, response) => {
-            if(err) res.send('Error de consulta')
-            else res.render('autor/list', { autores: response})
+    const { pais } = req.query;
+
+    let query = 'SELECT * FROM autor';
+    const params = [];
+
+   
+    if (pais) {
+        query += ' WHERE pais = ?';
+        params.push(pais);
+    }
+
+
+    db.query(query, params, (err, response) => {
+        if (err) {
+            res.status(500).send('Error en la consulta');
+        } else {
+            // Renderiza la vista con los autores filtrados
+            res.render('autor/list', { autores: response, filtro: pais || '' });
         }
-    );
+    });
 };
+
+
 
 exports.autorAddForm = (req, res) => {
     res.render('autor/add')
@@ -108,3 +124,4 @@ exports.autorEdit = (req, res) => {
         }
     )
 }
+
