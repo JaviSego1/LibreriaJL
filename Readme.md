@@ -3,7 +3,6 @@
 Nuestro programa consiste en una librería online para la venta de libros, la funcionalidad del programa 
 ha sido realizada con Node.js, como motor gráfico hemos utilizado pug, y como sistema gestor de base de datos hemos utilizado mysql.
 
-Javier se ha encargado de la parte de la venta del libro y Luis de la gestión del libro.
 <br><br>
 Para este proyecto hemos utilzado estas dependencias:
 - body-parser

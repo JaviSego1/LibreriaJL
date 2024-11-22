@@ -2,7 +2,7 @@ extends ../templates/layout
 
 block content
   .container
-    h1.mb-4 Lista de Clientes
+    h1.mb-4 Lista de Ventas
     table.table.table-striped.table-bordered
       thead
         tr
@@ -13,6 +13,6 @@ block content
         each venta in ventas
           tr
             td= venta.id_venta
-            td= venta.fecha_venta
+            td= new Date(venta.fecha_venta).toLocaleDateString('es-ES')
             td= venta.total
             
