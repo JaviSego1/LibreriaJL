@@ -11,7 +11,8 @@ block content
                         input.form-control(type="text", name="titulo", value=libro.titulo, required)
                     .mb-3
                         label(for="fecha_publicacion") Fecha publicación:
-                        input.form-control(type="date", name="fecha_publicacion", value=libro.fecha_publicacion, required)
+                        // Aseguramos que la fecha esté en formato 'YYYY-MM-DD'
+                        input.form-control(type="date", name="fecha_publicacion", value=libro.fecha_publicacion.toISOString().split('T')[0], required)
                     .mb-3
                         label(for="precio") Precio:
                         input.form-control(type="number", name="precio", value=libro.precio, step="0.01", min="0", max="1000", required)
