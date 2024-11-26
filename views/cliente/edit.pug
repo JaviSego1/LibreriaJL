@@ -8,13 +8,11 @@ block content
                 form(method="post") 
                     .mb-3
                         label.form-label(for="nombre") Nombre:
-                        input.form-control(type="text", name="nombre", value=cliente.nombre)
+                        input.form-control(type="text", name="nombre", value=cliente.nombre, required)
                     .mb-3
                         label.form-label(for="correo") Correo:
-                        input.form-control(type="text", name="correo", value=cliente.correo)
+                        input.form-control(type="email", name="correo", value=cliente.correo, required)
                     .mb-3
                         input.form-control(type="hidden", name="id_cliente", value=cliente.id_cliente)
                     .mb-3
                         button.btn.btn-primary(type="submit") Guardar cambios
-
-            

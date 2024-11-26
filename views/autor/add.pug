@@ -8,10 +8,10 @@ block content
                 form(action="/autor/add", method="post") 
                     .mb-3
                         label.form-label(for="nombre") Nombre:
-                        input.form-control(type="text", name="nombre")              
+                        input.form-control(type="text", name="nombre", required)              
                     .mb-3r
                         label.form-label(for="pais") Pais:
-                        input.form-control(type="text", name="pais")                 
+                        input.form-control(type="text", name="pais", required)                 
                     .mb-3                
                         button.btn.btn-primary(type="submit") Guardar cambios
 

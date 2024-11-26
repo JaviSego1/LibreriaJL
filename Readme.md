@@ -165,3 +165,45 @@ SERVICE_PORT=8000
 | /libro/edit/:id    | POST   | update()   | Envía el formulario para editar un libro   |
 | /libro/del/:id    | GET   | delete()   | Pregunta si quiere borrar el libro con ese ID   |
 | /libro/del/:id    | POST   | delete()   | Elimina al libro con ese ID   |
+
+
+
+## **CRUD Autor**
+<br><br>
+
+| RUTA | VERBO | ACCIÓN | DESCRIPCIÓN |
+|----------|----------|----------|----------|
+| /    | GET   |    | Muestra información general de la librería   |
+| /autor    | GET   | findAll()   | Muestra todos los autores   |
+| /autor/add/    | GET   | save()   | Formulario para añadir autor   |
+| /autor/add/    | POST   | save()   | Envía el formulario para añadir autor   |
+| /autor/edit/:id    | GET   | update()   | Formulario para editar un autor ya existente   |
+| /autor/edit/:id    | POST   | update()   | Envía el formulario para editar un autor   |
+| /autor/del/:id    | GET   | delete()   | Pregunta si quiere borrar el autor con ese ID   |
+| /autor/del/:id    | POST   | delete()   | Elimina al autor con ese ID   |
+
+
+## **CRUD Cliente**
+<br><br>
+
+| RUTA | VERBO | ACCIÓN | DESCRIPCIÓN |
+|----------|----------|----------|----------|
+| /    | GET   |    | Muestra información general de la librería   |
+| /cliente    | GET   | findAll()   | Muestra todos los clientes   |
+| /cliente/add/    | GET   | save()   | Formulario para añadir cliente   |
+| /cliente/add/    | POST   | save()   | Envía el formulario para añadir cliente   |
+| /cliente/edit/:id    | GET   | update()   | Formulario para editar un cliente ya existente   |
+| /cliente/edit/:id    | POST   | update()   | Envía el formulario para editar un cliente   |
+| /cliente/del/:id    | GET   | delete()   | Pregunta si quiere borrar el cliente con ese ID   |
+| /cliente/del/:id    | POST   | delete()   | Elimina al cliente con ese ID   |
+
+
+## **CRUD Venta**
+<br><br>
+
+| RUTA | VERBO | ACCIÓN | DESCRIPCIÓN |
+|----------|----------|----------|----------|
+| /    | GET   |    | Muestra información general de la librería   |
+| /venta    | GET   | findAll()   | Muestra todas la ventas   |
+
+

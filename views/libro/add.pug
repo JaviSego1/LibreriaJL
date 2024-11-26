@@ -8,13 +8,13 @@ block content
                 form(action="/libro/add", method="post") 
                     .mb-3
                         label.form-label(for="titulo") Título:
-                        input.form-control(type="text", name="titulo")              
+                        input.form-control(type="text", name="titulo", required)              
                     .mb-3r
                         label.form-label(for="fecha_publicacion") Fecha publicación:
-                        input.form-control(type="date", name="fecha_publicacion")                 
+                        input.form-control(type="date", name="fecha_publicacion", required)                 
                     .mb-3
                         label.form-label(for="precio") Precio:
-                        input.form-control(type="number", name="precio" step="0.01" min="0" max="1000")
+                        input.form-control(type="number", name="precio" step="0.01" min="0" max="1000", required)
                     .mb-3                
                         button.btn.btn-primary(type="submit") Guardar cambios
 

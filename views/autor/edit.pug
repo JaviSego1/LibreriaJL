@@ -8,10 +8,10 @@ block content
                 form(method="post") 
                     .mb-3
                         label.form-label(for="nombre") Nombre:
-                        input.form-control(type="text", name="nombre", value=autor.nombre)
+                        input.form-control(type="text", name="nombre", value=autor.nombre, required)
                     .mb-3
                         label.form-label(for="pais") Pais:
-                        input.form-control(type="text", name="pais", value=autor.pais)
+                        input.form-control(type="text", name="pais", value=autor.pais, required)
                     .mb-3
                         input.form-control(type="hidden", name="id_autor", value=autor.id_autor)
                     .mb-3
